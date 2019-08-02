@@ -10,11 +10,36 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var verticalSpacingContraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var view1: UIView!
+    
+    @IBOutlet weak var view2: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view
+        
+        // corner radius
+        view1.layer.cornerRadius = 10
+        
+        // border
+        view1.layer.borderWidth = 1.0
+        view1.layer.borderColor = UIColor.black.cgColor
+        
+        // shadow
+        view1.layer.shadowColor = UIColor.black.cgColor
+        view1.layer.shadowOffset = CGSize(width: 0, height: 0)
+        view1.layer.shadowOpacity = 1
+        view1.layer.shadowRadius = 10
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        
+        verticalSpacingContraint.constant = -(view2.frame.height/2)
+        
+        
+    }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
