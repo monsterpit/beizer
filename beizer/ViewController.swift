@@ -6,6 +6,8 @@
 //  Copyright © 2019 MyGlamm. All rights reserved.
 //
 
+//https://stackoverflow.com/questions/4754392/uiview-with-rounded-corners-and-drop-shadow
+
 import UIKit
 
 class ViewController: UIViewController {
