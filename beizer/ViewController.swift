@@ -13,6 +13,10 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var verticalSpacingContraint: NSLayoutConstraint!
+   // @IBOutlet weak var trailingConstantForButton: NSLayoutConstraint!
+ //   @IBOutlet weak var leadingConstrain: NSLayoutConstraint!
+    
+    @IBOutlet weak var biezerView: Beizer!
     
     @IBOutlet weak var view1: UIView!
     
@@ -33,6 +37,10 @@ class ViewController: UIViewController {
         view1.layer.shadowOffset = CGSize(width: 0, height: 0)
         view1.layer.shadowOpacity = 1
         view1.layer.shadowRadius = 10
+        
+//        leadingConstrain.constant = (view.frame.width  * 0.15) - 16
+        
+       // trailingConstantForButton.constant = (biezerView.frame.width * 0.12 ) - 16
     }
     
     override func viewDidLayoutSubviews() {
@@ -41,6 +49,10 @@ class ViewController: UIViewController {
         verticalSpacingContraint.constant = -(view2.frame.height/2)
         
         
+    }
+    @IBAction func pressedBtn(_ sender: UIButton) {
+        biezerView.labelText = "hello there"
+        print("\(biezerView.labelText)")
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
